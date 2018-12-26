@@ -1,0 +1,29 @@
+extends ./include/_layout.jade
+
+block vartext
+    - var pathtitle = ''
+block header
+    - var path = 'index.html'
+    include include/layouts/_navbar.jade
+
+block content
+    //- 廣告
+    include ./include/pages/index/_banner.jade
+    //- 我們的優勢
+    include ./include/pages/index/_superiority.jade
+    //- 優惠商品
+    include ./include/pages/index/_discount.jade
+    //- 新產品趨勢
+    include ./include/pages/index/_newProduct.jade
+    //- 促銷橫幅節
+    #about
+        include ./include/pages/index/_promoBanner.jade
+    //- 我們的分類
+    include ./include/pages/index/_sort.jade
+    //- 關注我們 Instagram
+    include ./include/pages/index/_instagram.jade
+
+block javascripts
+    include ./include/pages/index/_javascripts.jade
+
+   

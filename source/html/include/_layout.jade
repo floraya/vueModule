@@ -1,0 +1,29 @@
+block vartext
+doctype html
+html(lang='zh-TW')
+    head
+        meta(charset=' UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.01, shrink-to-fit=no')
+        meta(http-equiv='X-UA-Compatible', content='ie=edge')
+        include layouts/_seo.jade
+        title 徐桃花 / #{pathtitle}
+        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.3.1/css/all.css')
+        link(rel='stylesheet', href='./assets/css/all.css')
+    body#top
+        
+        include mixin/_mixin.jade
+        //- include utilities/_loading.jade
+        include utilities/_gotoTop.jade
+        include layouts/_topbar.jade
+        header.header.header-top
+            .container
+                block header
+
+
+        main.main-content-wrap
+            block content
+        
+        include layouts/_footer.jade
+        
+        include layouts/_javascripts.jade
+        block javascripts

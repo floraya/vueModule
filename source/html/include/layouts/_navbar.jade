@@ -1,0 +1,44 @@
+//- 
+  .navigation                     導航包裝器
+  .navigation-header              縱向視圖上的可見標題
+  .navigation-brand-text          你的品牌文字
+  .navigation-button-toggler      用於顯示或隱藏offcanvas面板的按鈕
+  .navigation-body                菜單鏈接和其他內容的包裝器。這是橫向視圖和非掃描面板上的可見內容
+  .navigation-body-header         導航體的標題。通常包裝品牌文字或徽標和關閉按鈕（offcanvas）
+  .navigation-menu                菜單鏈接列表
+
+
+//- navigation-justified 靠右
+//- navigation-centered 居中
+nav#navigation.navigation.navigation-justified
+    //- 手機版
+    +m-nav-text("#","LOGO")
+    .navigation-body
+      +w-nav-img("#","電腦LOGO","https://picsum.photos/g/50/50")
+      //- 選單
+      ul.navigation-menu
+        li.navigation-item
+          a.navigation-link(href='index.html') 首頁
+          ul.navigation-dropdown
+            +navigation-dropdown-item("首頁1", "#")
+            +navigation-dropdown-item("首頁2", "#")
+        li.navigation-item
+          a.navigation-link(href='#') 一些元件
+          ul.navigation-dropdown
+            +navigation-dropdown-item("優惠模組", "discount.html")
+            +navigation-dropdown-item("選單", "nav.html")
+        li.navigation-item
+          a.navigation-link(href='about.html') 關於我們
+          .navigation-megamenu
+            .navigation-megamenu-container
+                |文字
+        li.navigation-item
+          a.navigation-link(href='news.html') 最新消息
+          .navigation-megamenu.navigation-megamenu-quarter
+            .navigation-megamenu-container
+              |文字文字文字文字文字文字文字文字文字文字文字
+        li.navigation-item
+          a.navigation-link(href='product.html') 線上商品
+        li.navigation-item
+          a.navigation-link(href='contact.html') 聯絡我們
+      +community-circle("#","#","#")

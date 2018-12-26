@@ -1,0 +1,41 @@
+// 底色
+@mixin radio-variant($background) {
+    > input{
+        &:checked + label{
+            background: $background;
+            color: color-yiq($background);
+            @include hover {
+                color: color-yiq(darken($background, 7.5%));
+                background: darken($background, 7.5%);
+            }
+        }
+        
+    }
+}
+
+// 線框
+@mixin radio-outline-variant($color){
+    > input{
+        &:checked + label{
+            color: color-yiq($color);
+            background:$color;
+            @include hover {
+                color: color-yiq(darken($color, 7.5%));
+                background: darken($color, 7.5%);
+            }
+        }
+        &:disabled + label{
+            color: $color;
+            background-color: transparent;
+        }
+    }
+    > label{
+        color: $color;
+        background-color:rgba($color,0);
+        border-color: $color;
+        @include hover {
+            background-color:$color;
+            color: color-yiq($color);
+        }
+    }
+}

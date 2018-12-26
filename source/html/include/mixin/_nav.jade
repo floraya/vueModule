@@ -1,0 +1,161 @@
+//- ============================
+     手機 .navigation-header
+//- ============================
+//- 漢堡
+mixin hamburger
+    .navigation-button-toggler
+        i.hamburger-icon
+
+mixin nav-close
+    span.navigation-body-close-button ✕
+
+//- 文字
+mixin m-nav-text(url='#',name)
+    .navigation-header
+      .navigation-logo
+        a(hhref=url)=name
+      +hamburger
+//- 照片的
+mixin m-nav-img(url='#',name, img)
+    .navigation-header
+      .navigation-logo
+        a(href=url)
+          img(src=img, alt=name)
+      +hamburger
+//- 有電話 tel:123456789
+mixin m-nav-phone(url='tel:123456789',name,phone)
+    .navigation-header
+        +hamburger
+        .navigation-logo
+            a(hhref=url)=name
+        a.navigation-button-toggler(href=phone)
+            i.fas.fa-phone
+
+
+//- ============================
+     電腦版 navigation-body
+//- ============================
+//- 文字
+mixin w-nav-text(url='#',name)
+    .navigation-body-header
+        .navigation-logo
+          a(href=url)=name
+        +nav-close
+//- 照片的   
+mixin w-nav-img(url='#',name,img)
+    .navigation-body-header
+        .navigation-logo
+          a(href=url)
+            img(src=img, alt=name)
+        +nav-close
+
+//- ============================
+    社群分享 .navigation-social-menu
+//- ============================
+mixin community-circle(fb='#',twitter='#',ig='#')
+    ul.navigation-menu.navigation-social-menu
+        li.navigation-item
+            a.navigation-link(href=fb)
+                i.fab.fa-facebook-f
+        li.navigation-item
+            a.navigation-link(href=twitter)
+                i.fab.fa-twitter
+        li.navigation-item
+            a.navigation-link(href=ig)
+                i.fab.fa-instagram
+
+
+
+//- 主要選單
+mixin nav(name, url='#')
+    if path ===  url
+        li.navigation-item.is-active
+            a.navigation-link(href='#{url}') #{name}
+            //- +navSecondaryhorizontal(name, url)
+    else
+        li.navigation-item
+            a.navigation-link(href='#{url}') #{name}
+            //- +navSecondary(name, url)
+
+
+//- 子選單
+mixin navigation-dropdown-item(name, url)
+    li.navigation-dropdown-item
+        a.navigation-dropdown-link(href=url)=name
+
+//- 下拉式選單 dropdown 落下
+mixin navSecondary(name, url)
+    ul.navigation-dropdown
+        li.navigation-dropdown-item
+            a.navigation-dropdown-link(href=url)=name
+
+//- 下拉式選單 往左邊 dropdown 落下
+mixin navSecondaryLeft(name, url)
+    ul.navigation-dropdown.navigation-dropdown-left
+        li.navigation-dropdown-item
+            a.navigation-dropdown-link(href=url)=name
+
+//- 下拉式選單 橫向 dropdown 落下
+mixin navSecondaryhorizontal(name, url)
+    ul.navigation-dropdown.navigation-dropdown-horizontal
+        li.navigation-dropdown-item
+            a.navigation-dropdown-link(href=url)=name
+        li.navigation-dropdown-item
+            a.navigation-dropdown-link(href=url)=name
+
+
+
+//- 導航式選單 navMegamenu 落下
+mixin navMegamenu(title, name, url)
+    .navigation-megamenu
+        .navigation-megamenu-container
+         .navigation-row
+            .navigation-col
+                ul.navigation-list
+                  li.navigation-list-heading
+                    a(href=url)=title
+                  li
+                    a(href=url)=name
+            .navigation-col
+                ul.navigation-list
+                  li.navigation-list-heading
+                    a(href=url)=title
+                  li
+                    a(href=url)=name
+            .navigation-col
+                ul.navigation-list
+                  li.navigation-list-heading
+                    a(href=url)=title
+                  li
+                    a(href=url)=name
+                    
+//- 導航式選單 navMegamenu 落下
+mixin navMegamenu
+    .navigation-megamenu
+        .navigation-megamenu-container
+
+//- 導航式選單 navMegamenu-half 一半
+mixin navMegamenuHalf
+    .navigation-megamenu.navigation-megamenu-half
+        .navigation-megamenu-container
+
+
+mixin navMegamenuTabs
+    .navigation-megamenu
+        .navigation-megamenu-container
+            .navigation-tabs
+                ul.navigation-tabs-nav
+                    li.navigation-tabs-nav-item.is-active
+                        a(href="#") Tab 1
+                    li.navigation-tabs-nav-item.is-active
+                        a(href="#") Tab 2
+                    li.navigation-tabs-nav-item.is-active
+                        a(href="#") Tab 3
+                .navigation-tabs-pane.is-active
+                    |內容1
+                .navigation-tabs-pane
+                    |內容2
+                .navigation-tabs-pane
+                    |內容3
+
+

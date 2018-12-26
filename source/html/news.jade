@@ -1,0 +1,10 @@
+extends ./include/_layout.jade
+block vartext
+    - var pathtitle = '最新消息'
+block header
+    - var path = 'news.html'
+    include include/layouts/_navbar.jade
+block content
+    | #{path}
+    //- 廣告
+    include ./include/pages/index/_banner.jade

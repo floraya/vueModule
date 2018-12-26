@@ -1,0 +1,22 @@
+//- ============================
+          特價單式廣告模組
+//- ============================
+mixin discount-single-banner(title, noSale, url, img)
+    a.discount-single-banner(href=url)
+        .discount-title
+          h3=title
+          p.text-muted Sale 
+            span.text-danger.h5=noSale 
+            |% OFF
+        img.discount-img(src=img, alt=title)
+
+//- ============================
+          特價列表模組
+//- ============================
+mixin discount-list(title, noSale, url, img)
+    a.discount-item(href=url)
+        .discount-title.text-white
+            h3.h6 下殺 
+                span.text-danger.h1=noSale 
+                |折
+        img.discount-img(src='https://picsum.photos/' + img, alt=title)

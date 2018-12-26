@@ -1,0 +1,110 @@
+// 標題
+%discount-title{
+    z-index: 2;
+    @extend %pos-a;
+    left: 40px;
+    
+}
+%discount-img{
+    width: 100%;
+}
+/* ============================
+          特價單式廣告模組
+============================  */
+.discount-single-banner{
+    @extend %pos-r;
+    @extend %d-block;
+    @extend %ovh;
+    @extend %c-pointer;
+    background: $gray-400;
+    width: 100%;
+    // 標題
+    .discount-title{
+        top: 40px;
+        @extend %discount-title;
+        h3{
+            font-size: $h5-font-size;
+            width: 80%;
+            @extend %ovh-h5;
+            font-weight:$font-weight-bold;
+            color: $dark;
+        }
+        p{
+            @extend %ovh-14;
+            font-size: 0.875rem;
+        }
+    }
+    // 照片
+    .discount-img{
+        @extend %discount-img;
+        transform:scale(1);
+        @include transition(transform .5s);
+    }
+    &:hover{
+        .discount-img{
+            transform:scale(1.2);
+        }
+    }
+    
+}
+.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12{
+    .discount-single-banner{
+        .discount-title{width:60%;}
+    }
+}
+
+/* ============================
+          特價列表模組
+============================  */
+.discount-list{
+     padding-bottom: 30px;
+    .discount-item{
+        @extend %pos-r;
+        @extend %d-block;
+        @extend %ovh;
+        @extend %c-pointer;
+        width: 100%;
+        // // 標題
+        .discount-title{
+            bottom: 40px;
+            @extend %discount-title;
+            text-shadow:0 0 5px rgba($black,.1);
+            transition: opacity 0.35s, transform 0.35s;
+            transform: translate3d(20px, 0, 0);
+            h3{
+                span{
+                    margin-bottom: -10px;
+                    font-family: Helvetica;
+                }
+            }
+        }
+        // 照片
+        .discount-img{
+            @extend %discount-img;
+        }
+
+        &::before{
+            @extend %pos_a;
+            @extend %bfaf;
+            @extend %d-block;
+            top: 20px;
+            right:20px;
+            bottom:20px;
+            left: 20px;
+            border: 1.5px solid $white;
+            opacity:0;
+            z-index: 1;
+            transition: opacity 0.35s, transform 0.35s;
+            transform: translate3d(-10px, 0, 0);
+        }
+        &:hover{
+            .discount-title{
+                transform: translate3d(0, 0, 0);
+            }
+            &::before{
+                opacity:1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+}

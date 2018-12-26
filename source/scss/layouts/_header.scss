@@ -1,0 +1,18 @@
+.header{
+    background: #fff;
+    width: 100%;
+    border-bottom: 1px solid $border-color;
+
+
+
+
+    // 選單的下拉式選單
+    #navigation{
+        .dropdown-menu{
+            width: 300px;
+            margin-top: -1px;
+            border-radius:0;
+        }
+    }
+
+}

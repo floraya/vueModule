@@ -1,0 +1,101 @@
+.product-item{
+    @extend %ovh;
+    border:0;
+    border-radius:0;
+    padding: 3%;
+    margin: 5%;
+    @include transition(.5s);
+    
+
+    %t10{top: 10px;}
+    .product-img{
+        @extend %pos_r;
+        // 特價 標籤
+        .label-sale{
+            @extend %pos_a;
+            @extend %t10;
+            left: 10px;
+        }
+        // 最新 標籤
+        .label-new{
+            @extend %pos_a;
+            @extend %t10;
+            right: 10px;
+        }
+        // 照片
+        img{
+            width: 100%;
+        }
+    }
+    // 產品內容
+    .product-caption{
+        // 商品標題
+        .card-title{
+            @extend %ovh;
+            height: 24px;
+        }
+
+    }
+    // 產品製造商
+    .product-manufacturer{
+        @extend %fz12;
+    }
+    // 產品評級
+    .product-ratings{
+        @extend %fz12;
+        color: $gray-300;
+
+    }
+    // 價格
+    .product-price{
+        // 舊價格
+        .price-old{
+            font-size: 14px;
+            font-weight: 400;
+            padding-right: 8px;
+            text-decoration: line-through;
+            display: inline-block;
+        }
+        // 新價格
+        .price-new{
+            font-size: 18px;
+            font-weight: 500;
+            color: $danger;
+        }
+    }
+    // 鏈接動作
+    .action-links{
+        @extend %pos_a;
+        left: 50%;
+        bottom: 20px;
+        background: #fff;
+        visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        @include transition(all 0.4s ease-out);
+        -webkit-transform: perspective(600px) rotateX(90deg) translateX(-50%);
+        transform: perspective(600px) rotateX(90deg) translateX(-50%);
+        .btn-cart{
+            color: $gray-700;
+            border-right: 1px solid #ebebeb;
+            &:last-child{
+                border-right:0;
+            }
+        }
+    }
+
+    &:hover,
+    &.product-action{
+        -webkit-box-shadow: 0 0 20px 0 rgba(41, 44, 58, 0.15);
+        box-shadow: 0 0 20px 0 rgba(41, 44, 58, 0.15);
+
+        .action-links{
+            visibility: visible;
+            -webkit-transform: translateX(-50%) translateY(0);
+            -ms-transform: translateX(-50%) translateY(0);
+            transform: translateX(-50%) translateY(0);
+        }
+    }
+
+}
+

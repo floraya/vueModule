@@ -1,0 +1,74 @@
+extends ./include/_layout.jade
+block vartext
+    - var pathtitle = '優惠模組'
+block header
+    - var path = 'discount.html'
+    include include/layouts/_navbar.jade
+block content
+
+    section.container.my-5
+        .sec-title
+            h2 單品優惠模組
+            //- .subtitle 每一個都是自由的，湖底的生命也是積累的，並且可以累積出來
+        .row
+            .col-md-3
+                +discount-single-banner("商品名稱", 5, "#", "https://image.ibb.co/c1wqxf/banner1.jpg")
+            .col-md-6
+                +discount-single-banner("墨鏡墨鏡墨鏡墨鏡墨鏡墨鏡墨鏡墨鏡墨鏡墨鏡墨鏡墨鏡", 5, "#", "https://image.ibb.co/jCFTiL/banner2.jpg")
+            .col-md-3
+                +discount-single-banner("墨鏡", 5, "#", "https://image.ibb.co/do4XA0/banner3.jpg")
+
+    section.container-fluid
+        .sec-title
+            h2 優惠列表
+        .discount-list.swiper-container
+            .swiper-wrapper
+                figure.swiper-slide
+                    +discount-list("墨鏡", 5, "#", "350/350/?gravity=east")
+                figure.swiper-slide
+                    +discount-list("墨鏡", 9, "#", "350/350/?blur")
+                figure.swiper-slide
+                    +discount-list("墨鏡", 8, "#", "350/350?image=0")
+                figure.swiper-slide
+                    +discount-list("墨鏡", 7, "#", "350/350?image=2")
+                figure.swiper-slide
+                    +discount-list("墨鏡", 6, "#", "350/350/?random")
+                figure.swiper-slide
+                    +discount-list("墨鏡", 4, "#", "350/350/?gravity=east")
+            
+            .swiper-button-prev.swiper-button-white
+            .swiper-button-next.swiper-button-white
+
+
+block javascripts
+    script.
+        var mySwiper = new Swiper('.discount-list', {
+            
+            autoplay:true,
+            centeredSlides: false,
+            spaceBetween: 10,
+            slidesPerView: 5, // number or auto
+            slidesPerGroup : 5, // 群組
+            spaceBetween: 20, //之间设置距离
+            grabCursor : true, //手指
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 4,
+                    slidesPerGroup : 4,
+                },
+                640: {
+                    slidesPerView: 3,
+                    slidesPerGroup : 3,
+                },
+                375: {
+                    slidesPerView: 2,
+                    slidesPerGroup : 2,
+                    spaceBetween: 10,
+                }
+            }
+        });
+

@@ -1,0 +1,8 @@
+extends ./include/_layout.jade
+block vartext
+    - var pathtitle = '關於我們'
+block header
+    - var path = 'about.html'
+    include include/layouts/_navbar.jade
+block content
+    #{path}

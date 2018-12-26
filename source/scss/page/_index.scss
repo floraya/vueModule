@@ -1,0 +1,58 @@
+// 廣告
+.index-banner{
+    // 點點
+        .swiper-pagination{
+
+        }        
+        .swiper-pagination-bullet{
+            background: $gray-300;
+            opacity: 1;
+        }
+        .swiper-pagination-bullet-active{
+            background: $primary;
+        }
+    // 箭頭
+}
+
+// 優惠商品
+.index-discount{
+    .product-item{
+        @extend %pos_r;
+        display: block;
+        &::before{
+            @extend %pos_a;
+            content: "";
+            display: block;
+            top: 10%;
+            right:10%;
+            bottom:10%;
+            left: 10%;
+            border: 1.5px solid $white;
+            opacity:0;
+            z-index: 1;
+            transition: opacity 0.35s, transform 0.35s;
+            transform: translate3d(-10px, 0, 0);
+        }
+        &:hover{
+            &::before{
+                opacity:1;
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+
+        }
+    }
+    
+
+}
+
+
+// 我們的分類
+
+.index-classification{
+    min-height: 380px;
+    @include media-breakpoint-down(sm) {
+        min-height:auto;
+    }
+}
+

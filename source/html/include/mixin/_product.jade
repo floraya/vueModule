@@ -1,0 +1,25 @@
+//- ==============================================
+          元件- 購物 、 加入最愛 、 分享 、 搜尋
+//- ==============================================
+mixin action-links(shoppingurl, hearturl, syncurl, sistrixurl)
+    .action-links.btn-group
+        a.btn.btn-cart(href=shoppingurl)
+            i.fas.fa-shopping-basket
+        a.btn.btn-cart(href=hearturl)
+            i.far.fa-heart
+        a.btn.btn-cart(href=syncurl)
+            i.fas.fa-sync-alt
+        a.btn.btn-cart(href=sistrixurl)
+            i.fab.fa-sistrix
+
+//- ==============================================
+          元件- 舊價格、新價格
+//- ==============================================
+mixin price(priceold, pricenew)
+    .product-price
+        span.price-old=priceold
+        span.price-new=pricenew
+//- ============================
+          產品
+//- ============================
+

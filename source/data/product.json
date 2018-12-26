@@ -1,0 +1,17 @@
+{
+    "product":[{
+        "name": "商品名稱商品名稱商品名稱商品名稱商品名稱",
+        "img":"https://picsum.photos/225/225",
+        "url": "javascript:;",
+        "manufacturer":"產品製造商",
+        "priceOld":"$78.90",
+        "priceNew":"$78.90",
+        "action-links":{
+            "cart":{"linkUrl": "javascript:;","linkCart":"heart"},
+            "heart":{"linkUrl": "javascript:;","linkCart":"heart"},
+            "sync":{"linkUrl": "javascript:;","linkCart":"heart"},
+            "similar":{"linkUrl": "javascript:;","linkCart":"heart"}
+            
+        }
+    }]
+}

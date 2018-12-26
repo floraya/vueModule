@@ -1,0 +1,18 @@
+//- ============================
+          元件-照片路徑
+//- ============================
+mixin picsum(title, img)
+  img(src='https://picsum.photos/' + img, alt=title)
+
+mixin ibb(title, img)
+  img(src='https://image.ibb.co/' + img, alt=title)
+
+//- ============================
+          特價單式廣告模組
+//- ============================
+mixin image-ig(title, url, img)
+    figure.image-ig
+        a.image-link(href=url)
+          i.fab.fa-instagram
+          img(src=img, alt=title)
+        figcaption.d-md-none.d-sm-block=title

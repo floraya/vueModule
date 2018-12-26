@@ -1,0 +1,23 @@
+{
+	"list": [{
+		"name": "這是首頁",
+		"en":"index",
+		"url": "index.html"
+	},
+	{
+		"name": "關於我們",
+		"url": "about.html"
+	},
+	{
+		"name": "最新消息",
+		"url": "news.html"
+	},
+	{
+		"name": "線上商品",
+		"url": "product.html"
+	},
+	{
+		"name": "聯絡我們",
+		"url": "contact.html"
+	}]
+}

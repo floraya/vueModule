@@ -1,0 +1,48 @@
+#loading{
+    background:#000;
+    z-index:99999;
+    @extend %pos_f;
+    @extend %tb0;
+    @extend %lr0
+  }
+  
+  #loading .loapic{
+    @extend %pos_f;
+    @extend %tlcenter;
+
+  }
+  
+  .log {
+    display: inline-block;
+    padding: 50px;
+    margin: 1rem;
+  }
+  
+  .o1 div {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    display: inline-block;
+    animation: bounce 1s infinite;
+  }
+  .o1 div:nth-child(1) {
+    animation-delay: .1s;
+    background: #009DC6;
+  }
+  .o1 div:nth-child(2) {
+    animation-delay: .3s;
+    background: #e8b440;
+  }
+  .o1 div:nth-child(3) {
+    animation-delay: .5s;
+    background: #b62327;
+  }
+
+  @-webkit-keyframes bounce {
+    0%, 100% {
+      opacity: 1;
+    }
+    60% {
+      opacity: .0;
+    }
+  }

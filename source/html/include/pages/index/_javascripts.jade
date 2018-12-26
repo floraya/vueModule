@@ -1,0 +1,150 @@
+script.
+    //- 廣告輪播
+    var swiper = new Swiper('.index-banner', {
+        autoplay: true,//可选选项，自动滑动
+        grabCursor : true,
+        setWrapperSize :true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        uniqueNavElements: false,
+      
+    });
+
+    //- 優惠商品
+    var mySwiper = new Swiper('.index-discount', {
+        
+        autoplay:true,
+        centeredSlides: false,
+        spaceBetween: 10,
+        slidesPerView: 5, // number or auto
+        slidesPerGroup : 5, // 群組
+        spaceBetween: 20, //之间设置距离
+        grabCursor : true, //手指
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 4,
+                slidesPerGroup : 4,
+            },
+            640: {
+                slidesPerView: 3,
+                slidesPerGroup : 3,
+            },
+            375: {
+                slidesPerView: 2,
+                slidesPerGroup : 2,
+                spaceBetween: 10,
+            }
+        }
+    });
+
+    //- 最新產品
+    var mySwiper = new Swiper('.index-newpro', {
+        slidesPerView: 'auto',
+        autoplay:true,
+        centeredSlides: false,
+        slidesPerView: 4,
+        slidesPerGroup : 4,
+        spaceBetween: 0,
+        grabCursor : true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 3,
+                slidesPerGroup : 3,
+            },
+            640: {
+                slidesPerView: 2,
+                slidesPerGroup : 2,
+            }
+        }
+    });
+
+    //- 產品分類
+    var mySwiper = new Swiper('.index-classification', {
+        slidesPerView: 'auto',
+        autoplay:true,
+        centeredSlides: false,
+        slidesPerView: 5,
+        slidesPerGroup : 5,
+        spaceBetween: 0,
+        grabCursor : true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 4,
+                slidesPerGroup : 4,
+            },
+            640: {
+                slidesPerView: 2,
+                slidesPerGroup : 2,
+            },
+            320: {
+                slidesPerView: 1,
+                slidesPerGroup : 1,
+            }
+        }
+    });
+
+    jQuery(function() {
+    jQuery(".filter-button").click(function(){
+      var value = jQuery(this).attr('data-filter');
+      if(value == "all"){
+          jQuery('.filter').show('1000');
+          } else {
+          jQuery(".filter").not('.'+value).hide('3000');
+          jQuery('.filter').filter('.'+value).show('3000');
+          }
+      });
+    if (jQuery(".filter-button").removeClass("active")) {
+      jQuery(this).removeClass("active");
+      }else {
+      jQuery(this).addClass("active");
+      };
+    });
+      
+    //- 關注我們 Instagram
+    var mySwiper = new Swiper('.index-instagram', {
+        slidesPerView: 'auto',
+        autoplay:true,
+        centeredSlides: false,
+        slidesPerView: 6,
+        slidesPerGroup : 6,
+        spaceBetween: 5,
+        grabCursor : true,
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 5,
+                slidesPerGroup : 5,
+            },
+            640: {
+                slidesPerView: 4,
+                slidesPerGroup : 4,
+            },
+            369: {
+                slidesPerView: 2,
+                slidesPerGroup : 2,
+            }
+        }
+    });

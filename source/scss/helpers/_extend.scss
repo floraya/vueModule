@@ -1,0 +1,66 @@
+// ============================
+//       Position 位置
+// ============================ 
+%pos_a{position: absolute;}
+%pos_r{position: relative;}
+%pos_f{position: fixed;}
+%pos_sta{position: static;}
+%pos_sti{position: sticky;}
+
+%pos-a{position: absolute;}
+%pos-r{position: relative;}
+%pos-f{position: fixed;}
+%pos-sta{position: static;}
+%pos-sti{position: sticky;}
+
+%t0{top: 0;}
+%l0{left: 0;}
+%r0{right: 0;}
+%b0{bottom: 0;}
+%tb0{top: 0;bottom: 0;}
+%lr0{left: 0;right: 0;}
+
+
+
+// 居中
+%tlcenter{
+    @extend %pos_a;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+// ============================
+//          overflow
+// ============================ 
+%ovh{overflow: hidden;}
+%ovxh{overflow-x: hidden;}
+%ovyh{overflow-y: hidden;}
+
+
+%ovh-h6{word-break: normal;height: 20px;overflow: hidden;}
+%ovh-h5{word-break: normal;height: 25px;overflow: hidden;}
+%ovh-14{word-break: normal;height: 20px;overflow: hidden;}
+
+// ============================
+//          偽元素
+// ============================ 
+%bfaf{content: "";}
+
+
+// ============================
+//         display
+// ============================ 
+%d-block{display: block;}
+%d-none{display: none;}
+%d-inline-block{display: inline-block;}
+
+
+// ============================
+//          文字 (Text)
+// ============================ 
+%fz12{font-size: 12px;}
+
+// ============================
+//         cursor
+// ============================ 
+%c-pointer{cursor: pointer;}
